@@ -27,7 +27,7 @@ jobs:
       - name: Loop Workflow
         continue-on-error: true
         run: |
-          git clone https://${{ secrets.GH_TOKEN }}@github.com/${GH_REPO} loop
+          git clone https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} loop
           cd loop
           echo $(( RANDOM - ( RANDOM % RANDOM ) )) > Restarting.txt
           git add Restarting.txt
