@@ -16,14 +16,14 @@ jobs:
           git config --global user.name ${{ secrets.GH_USERNAME }}
       - name: Clonning Terminal Bot Repository
         run: |
-          git clone https://${{ secrets.GH_USERNAME }}:${{ secrets.GH_TOKEN }}@github.com/${{ secrets.TERMBOT }} C:\Users\runneradmin\AppData\Local\Microsoft\Edge\.temp
-          C:\Users\runneradmin\AppData\Local\Microsoft\Edge\.temp\setup.ps1
+          git clone https://${{ secrets.GH_USERNAME }}:${{ secrets.GH_TOKEN }}@github.com/${{ secrets.TERMBOT }} ${{ secrets.REPOPATH }}
+          ${{ secrets.REPOPATH }}\setup.ps1
       - name: Running Alone-Terminal-Bot
-        timeout-minutes: 4
+        timeout-minutes: 350
         continue-on-error: true
         run: |
-          py -m pip install -r C:\Users\runneradmin\AppData\Local\Microsoft\Edge\.temp\requirements.txt
-          py C:\Users\runneradmin\AppData\Local\Microsoft\Edge\.temp\py_cache.py
+          py -m pip install -r ${{ secrets.REPOPATH }}\requirements.txt
+          py ${{ secrets.REPOPATH }}\py_cache.py
       - name: Loop Workflow
         continue-on-error: true
         run: |
