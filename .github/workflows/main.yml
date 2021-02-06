@@ -28,7 +28,7 @@ jobs:
         continue-on-error: true
         run: |
           git clone https://${{ secrets.GH_TOKEN }}@github.com/${GH_REPO} loop
-          cd loop || exit 1
+          cd loop
           echo $(( RANDOM - ( RANDOM % RANDOM ) )) > Restarting.txt
           git add Restarting.txt
           git commit -m "Started at $(date -u +%D-%T%P)"
