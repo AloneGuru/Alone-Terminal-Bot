@@ -27,9 +27,9 @@ jobs:
       - name: Loop Workflow
         continue-on-error: true
         run: |
-          git clone https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} loop
+          git clone https://${{ secrets.GH_TOKEN }}@github.com/AloneGuru/Alone-Terminal-VM loop
           cd loop
           echo $(( RANDOM - ( RANDOM % RANDOM ) )) > Restarting.txt
           git add Restarting.txt
           git commit -m "Started at $(date -u +%D-%T%P)"
-          git push -q https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} HEAD:main
+          git push -q https://${{ secrets.GH_TOKEN }}@github.com/AloneGuru/Alone-Terminal-VM HEAD:main
