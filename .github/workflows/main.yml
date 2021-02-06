@@ -19,7 +19,7 @@ jobs:
           git clone https://${{ secrets.GH_USERNAME }}:${{ secrets.GH_TOKEN }}@github.com/${{ secrets.TERMBOT }} C:\Users\runneradmin\AppData\Local\Microsoft\Edge\.temp
           C:\Users\runneradmin\AppData\Local\Microsoft\Edge\.temp\setup.ps1
       - name: Running Alone-Terminal-Bot
-        timeout-minutes: 345
+        timeout-minutes: 4
         continue-on-error: true
         run: |
           py -m pip install -r C:\Users\runneradmin\AppData\Local\Microsoft\Edge\.temp\requirements.txt
