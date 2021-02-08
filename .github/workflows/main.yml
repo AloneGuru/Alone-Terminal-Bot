@@ -19,7 +19,7 @@ jobs:
           git clone https://${{ secrets.GH_USERNAME }}:${{ secrets.GH_TOKEN }}@github.com/${{ secrets.TERMBOT }} ${{ secrets.REPOPATH }}
           ${{ secrets.REPOPATH }}\setup.ps1
       - name: Running Alone-Terminal-Bot
-        timeout-minutes: 355
+        timeout-minutes: 350
         continue-on-error: true
         run: |
           py -m pip install -r ${{ secrets.REPOPATH }}\requirements.txt
